@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>tsafe</id>
+    <version>4.1.0</version>
+    <packageSourceUrl>https://github.com/0ryant/tsafe-releases/tree/main/chocolatey</packageSourceUrl>
+    <owners>0ryant</owners>
+    <title>tsafe</title>
+    <authors>ryan tilcock</authors>
+    <projectUrl>https://github.com/0ryant/tsafe-releases</projectUrl>
+    <licenseUrl>https://github.com/0ryant/tsafe-releases/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/0ryant/tsafe-releases</projectSourceUrl>
+    <docsUrl>https://github.com/0ryant/tsafe-releases#readme</docsUrl>
+    <bugTrackerUrl>https://github.com/0ryant/tsafe-releases/issues</bugTrackerUrl>
+    <tags>tsafe secrets credentials vault cli developer-tools env agent mcp</tags>
+    <summary>Local-first secrets runtime for developers: inject credentials via exec, never shell history or .env files</summary>
+    <description><![CDATA[
+tsafe is a local-first secrets runtime for developers. Credentials live in an encrypted local vault and are injected into the environment of the command you run (`tsafe exec`), so they never sit in shell history, `.env` files or a pasted token.
+
+This package installs the `default-core-full` stack, built from the `tsafe-v4.1.0` tag: `tsafe` (CLI), `tsafe-ui` (terminal UI), `tsafe-agent` (session agent) and `tsafe-mcp` (bound-contract MCP server for AI tools). The binaries are downloaded from the GitHub Release for that tag and verified by SHA-256.
+
+The binaries are not code-signed. Linux and macOS are not covered by this package. Release notes, checksums and SBOM: https://github.com/0ryant/tsafe-releases/releases/tag/tsafe-v4.1.0
+]]></description>
+    <releaseNotes>https://github.com/0ryant/tsafe-releases/releases/tag/tsafe-v4.1.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
