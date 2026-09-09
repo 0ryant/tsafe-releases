@@ -1,0 +1,16 @@
+Package: tsafe
+Version: 4.1.0-1
+Architecture: arm64
+Maintainer: Ryan Tilcock <rytilcock@gmail.com>
+Installed-Size: 19951
+Filename: pool/main/t/tsafe/tsafe_4.1.0-1_arm64.deb
+Size: 9951162
+MD5sum: b6b8db3248a1571943df5703a750adb4
+SHA1: c553380a182221bf1b496551d03d8a194670799a
+SHA256: ae238d24b998151d97215bf59fe4393c10a3fadd8fbe12bceff9a13ab23cdd84
+Section: utils
+Priority: optional
+Homepage: https://github.com/0ryant/tsafe
+Description: Local-first secrets runtime for developers.
+ Ships the default-core-full stack shape: tsafe, tsafe-ui, tsafe-agent, and tsafe-mcp.
+
