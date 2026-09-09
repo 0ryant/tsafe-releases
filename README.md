@@ -17,7 +17,7 @@ From source, any platform with a Rust toolchain:
 cargo install tsafe-cli --version 4.1.0 --locked
 ```
 
-**apt (Debian/Ubuntu, amd64)** — signed repository:
+**apt (Debian/Ubuntu, amd64 + arm64)** — signed repository:
 
 ```bash
 sudo install -m0755 -d /etc/apt/keyrings
