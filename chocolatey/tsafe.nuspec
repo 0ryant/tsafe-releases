@@ -8,6 +8,7 @@
     <title>tsafe (Local-First Secrets Runtime)</title>
     <authors>ryan tilcock</authors>
     <projectUrl>https://github.com/0ryant/tsafe-releases</projectUrl>
+    <projectSourceUrl>https://crates.io/crates/tsafe-cli</projectSourceUrl>
     <licenseUrl>https://github.com/0ryant/tsafe-releases/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://github.com/0ryant/tsafe-releases#readme</docsUrl>
