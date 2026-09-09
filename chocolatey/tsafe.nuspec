@@ -5,12 +5,11 @@
     <version>4.1.0</version>
     <packageSourceUrl>https://github.com/0ryant/tsafe-releases/tree/main/chocolatey</packageSourceUrl>
     <owners>0ryant</owners>
-    <title>tsafe</title>
+    <title>tsafe (Local-First Secrets Runtime)</title>
     <authors>ryan tilcock</authors>
     <projectUrl>https://github.com/0ryant/tsafe-releases</projectUrl>
     <licenseUrl>https://github.com/0ryant/tsafe-releases/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/0ryant/tsafe-releases</projectSourceUrl>
     <docsUrl>https://github.com/0ryant/tsafe-releases#readme</docsUrl>
     <bugTrackerUrl>https://github.com/0ryant/tsafe-releases/issues</bugTrackerUrl>
     <tags>tsafe secrets credentials vault cli developer-tools env agent mcp</tags>
