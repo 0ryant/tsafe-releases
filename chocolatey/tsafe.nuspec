@@ -2,13 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>tsafe</id>
-    <version>4.1.0</version>
+    <version>4.1.0.20260909</version>
     <packageSourceUrl>https://github.com/0ryant/tsafe-releases/tree/main/chocolatey</packageSourceUrl>
     <owners>0ryant</owners>
     <title>tsafe (Local-First Secrets Runtime)</title>
     <authors>ryan tilcock</authors>
     <projectUrl>https://github.com/0ryant/tsafe-releases</projectUrl>
     <projectSourceUrl>https://crates.io/crates/tsafe-cli</projectSourceUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/0ryant/tsafe-releases@a8f93bee9070e9cc8c0f8ab4699165b355efe0db/chocolatey/tsafe.png</iconUrl>
     <licenseUrl>https://github.com/0ryant/tsafe-releases/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://github.com/0ryant/tsafe-releases#readme</docsUrl>
@@ -21,6 +22,8 @@ tsafe is a local-first secrets runtime for developers. Credentials live in an en
 This package installs the `default-core-full` stack, built from the `tsafe-v4.1.0` tag: `tsafe` (CLI), `tsafe-ui` (terminal UI), `tsafe-agent` (session agent) and `tsafe-mcp` (bound-contract MCP server for AI tools). The binaries are downloaded from the GitHub Release for that tag and verified by SHA-256.
 
 The binaries are not code-signed. Linux and macOS are not covered by this package. Release notes, checksums and SBOM: https://github.com/0ryant/tsafe-releases/releases/tag/tsafe-v4.1.0
+
+Package fix 4.1.0.20260909: packaging-only update that adds the package icon. The software is unchanged — identical 4.1.0 binaries, same download URL and SHA-256 as 4.1.0.
 ]]></description>
     <releaseNotes>https://github.com/0ryant/tsafe-releases/releases/tag/tsafe-v4.1.0</releaseNotes>
   </metadata>
