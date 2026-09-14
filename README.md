@@ -6,7 +6,7 @@ environment of the command you run (`tsafe exec`), so they never sit in shell
 history, `.env` files or a pasted token.
 
 The source repository is private. This repository publishes the compiled
-artifacts for each release tag and nothing else. The crates themselves are
+artifacts, package repositories and installation documentation. The crates themselves are
 public on crates.io.
 
 ## Install
@@ -25,6 +25,11 @@ curl -fsSL https://0ryant.github.io/tsafe-releases/apt/tsafe-archive-keyring.gpg
 echo "deb [signed-by=/etc/apt/keyrings/tsafe.gpg] https://0ryant.github.io/tsafe-releases/apt stable main" | sudo tee /etc/apt/sources.list.d/tsafe.list >/dev/null
 sudo apt update && sudo apt install tsafe
 ```
+
+**Fedora / DNF (planned for 4.2.0)** — the signed RPM channel is being prepared
+for x86_64 and aarch64. It is **not available from this preparation branch**.
+See [RPM channel requirements and Cargo migration](rpm/README.md). Existing
+Cargo installations are not upgraded by DNF and can take precedence on PATH.
 
 Other channels: **Chocolatey** (`choco install tsafe`, in moderation review) and
 **Homebrew** (a `0ryant/tsafe` tap, in progress) are being brought up on the same
