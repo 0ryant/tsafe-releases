@@ -30,6 +30,24 @@ sudo apt update && sudo apt install tsafe
 for x86_64 and aarch64. It is **not available from this preparation branch**.
 See [RPM channel requirements and Cargo migration](rpm/README.md). Existing
 Cargo installations are not upgraded by DNF and can take precedence on PATH.
+The [step-by-step 4.1 Cargo → 4.2 DNF guide](rpm/MIGRATE-4.1-CARGO-TO-4.2-DNF.md)
+covers preserving vaults, verifying signatures, retaining tray/nativehost,
+switching command paths and rollback once the signed channel is published.
+
+After the signed channel and its full signing-key fingerprint are announced,
+Fedora users add our repository once:
+
+```bash
+sudo dnf config-manager addrepo --from-repofile=https://0ryant.github.io/tsafe-releases/rpm/tsafe.repo
+sudo dnf --refresh install tsafe
+```
+
+Check DNF's key-import fingerprint against the release announcement. Future
+updates use `sudo dnf upgrade tsafe`. These are the
+[DNF5 repository-add commands](https://dnf5.readthedocs.io/en/latest/dnf5_plugins/config-manager.8.html)
+used by Fedora 44. **The URL is reserved for the upcoming signed channel; these
+commands are not live yet.** Existing Cargo users should follow the migration
+guide before removing their old installation.
 
 Other channels: **Chocolatey** (`choco install tsafe`, in moderation review) and
 **Homebrew** (a `0ryant/tsafe` tap, in progress) are being brought up on the same
