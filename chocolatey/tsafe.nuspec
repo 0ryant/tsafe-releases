@@ -9,7 +9,7 @@
     <authors>ryan tilcock</authors>
     <projectUrl>https://github.com/0ryant/tsafe-releases</projectUrl>
     <projectSourceUrl>https://crates.io/crates/tsafe-cli</projectSourceUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/0ryant/tsafe-releases@a8f93bee9070e9cc8c0f8ab4699165b355efe0db/chocolatey/tsafe.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/0ryant/tsafe-releases@8c92555a22606ad70de4339ab1452e254a6e3cc5/chocolatey/tsafe.png</iconUrl>
     <licenseUrl>https://github.com/0ryant/tsafe-releases/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://github.com/0ryant/tsafe-releases#readme</docsUrl>
@@ -29,5 +29,6 @@ The 4.2.0 package installs the signed-checksum-pinned Windows x86_64 archive.
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="tsafe.png" target="tools" />
   </files>
 </package>
