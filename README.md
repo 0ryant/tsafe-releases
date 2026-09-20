@@ -9,6 +9,9 @@ The source repository is private. This repository publishes the compiled
 artifacts, package repositories and installation documentation. The crates themselves are
 public on crates.io.
 
+Read the [full changelog](CHANGELOG.md), the [4.1.0 to 4.2.0 comparison](docs/4.1.0-to-4.2.0.md),
+and the [release checklist](RELEASE-CHECKLIST.md) before using or publishing a channel.
+
 ## Install
 
 From source, any platform with a Rust toolchain:
@@ -50,9 +53,8 @@ used by Fedora 44. Verify the RPM signing-key fingerprint
 import. Existing Cargo users should follow the migration guide before removing
 their old installation.
 
-Other channels: **Chocolatey** (`choco install tsafe`) and
-**Homebrew** (a `0ryant/tsafe` tap, in progress) are being brought up on the same
-model.
+Other channels: **Chocolatey** (`choco install tsafe`) is published. **Homebrew**
+(a `0ryant/tsafe` tap) remains in progress.
 
 Maintainers should run the [Chocolatey release checklist](chocolatey/RELEASE-CHECKLIST.md)
 before publishing a package.
