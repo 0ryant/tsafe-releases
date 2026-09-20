@@ -1,0 +1,9 @@
+[tsafe]
+name=tsafe stable
+baseurl=https://0ryant.github.io/tsafe-releases/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://0ryant.github.io/tsafe-releases/rpm/RPM-GPG-KEY-tsafe
+sslverify=1
+metadata_expire=1h
