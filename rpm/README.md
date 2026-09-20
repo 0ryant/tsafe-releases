@@ -1,32 +1,31 @@
-# RPM / DNF channel preparation
+# RPM / DNF channel
 
-Planned for tsafe 4.2.0, x86_64 and aarch64. **Not yet published.** This directory
-does not currently provide a repository configuration, production key or package.
-The public install command will be enabled with the verified signed channel.
+Live for tsafe 4.2.0 on x86_64 and aarch64. This directory contains the signed
+repository configuration, production public key, repository metadata and RPMs.
 The [4.1 Cargo → 4.2 DNF migration guide](MIGRATE-4.1-CARGO-TO-4.2-DNF.md)
 is prepared for that release and covers backup, signed installation, command
 resolution, companion restarts, verification and rollback.
 
-## User command after publication
+## User command
 
 We host a signed RPM repository on this repository's GitHub Pages site; DNF
 reads that repository. There is no upload to a central DNF registry.
-Once the signed channel is live, Fedora 44 users run:
+Fedora 44 users run:
 
 ```bash
 sudo dnf config-manager addrepo --from-repofile=https://0ryant.github.io/tsafe-releases/rpm/tsafe.repo
 sudo dnf --refresh install tsafe
 ```
 
-Confirm DNF's signing-key fingerprint against the release announcement.
-Subsequent updates use `sudo dnf upgrade tsafe`. These commands are prepared
-but the `.repo` URL is not published yet. Existing Cargo users should first
-follow the migration guide above. This is our third-party repository, not
-inclusion in Fedora's own package collection.
+Confirm DNF's signing-key fingerprint is
+`4E5971C6925D9EEA1E029F9CF18C6833D9BC9623`. Subsequent updates use
+`sudo dnf upgrade tsafe`. Existing Cargo users should first follow the migration
+guide above. This is our third-party repository, not inclusion in Fedora's own
+package collection.
 
 ## Package contents
 
-The intended package is `tsafe`, containing `tsafe`, `tsafe-ui`, `tsafe-agent`
+The package is `tsafe`, containing `tsafe`, `tsafe-ui`, `tsafe-agent`
 and `tsafe-mcp`, manpages and the license. The current build baseline requires
 glibc 2.39 or newer, libgcc and CA certificates. Linux quick unlock uses the
 session's Secret Service; the RPM no longer links libdbus. It does not
@@ -34,7 +33,7 @@ claim compatibility with EL8/EL9.
 
 ## Channel layout and promotion contract
 
-The release host will supply:
+The release host supplies:
 
 ```text
 rpm/
@@ -51,7 +50,7 @@ rpm/
     aarch64/repodata/<checksum-named metadata>
 ```
 
-Before promotion, verify the announced full OpenPGP fingerprint, every RPM's
+Before installation, verify the announced full OpenPGP fingerprint, every RPM's
 signature/version/release/architecture and payload, signed repository metadata,
 and all referenced checksums. `tsafe.repo` must enable both `gpgcheck=1` and
 `repo_gpgcheck=1`. Record checksums after signing; signing changes RPM bytes.
@@ -60,7 +59,10 @@ Unsigned draft RPMs and test keys must never be copied into the live channel.
 Test the actual candidate on both architectures: clean installation, upgrade,
 reinstallation and removal, CLI build identity, bound MCP, agent, terminal UI
 and desktop keyring. A prior-version package rehearsal is not candidate proof.
-After deployment, verify fresh installations from the public HTTPS URL.
+After deployment, fresh installations from the public HTTPS URL were verified
+for x86_64. The aarch64 package is signed and directly smoke-tested under QEMU;
+the current x86_64 WSL host cannot complete Fedora's foreign-architecture
+installroot scriptlets, so native ARM64 installation remains a qualification.
 
 Preserve `/apt`, `/chocolatey`, `.nojekyll`, previous packages and metadata
 referenced by cached clients. Record the previous Pages commit for rollback.
@@ -72,7 +74,7 @@ Git attributes preserve the exact bytes of signed repository files.
 
 `cargo install tsafe --locked` normally places five binaries in `~/.cargo/bin`:
 `tsafe`, `tsafe-agent`, `tsafe-mcp`, `tsafe-nativehost` and `tsafe-tray`.
-The planned RPM places four binaries in `/usr/bin`: the shared CLI/agent/MCP
+The 4.2 RPM places four binaries in `/usr/bin`: the shared CLI/agent/MCP
 plus standalone `tsafe-ui`; it does not provide nativehost or tray.
 
 DNF cannot upgrade a Cargo-managed copy. Before changing installation methods,
@@ -92,9 +94,9 @@ nativehost/tray. An unqualified `cargo uninstall tsafe` removes all five: do
 not run it automatically. Follow the detailed guide for custom install roots
 or separately installed crates. Later RPM upgrades use `sudo dnf upgrade tsafe`.
 
-If remaining on Cargo, after publication use
+If remaining on Cargo, use
 `cargo install tsafe --version 4.2.0 --locked`. `--locked` fixes dependency
 resolution; `--version` selects the product release. No vault-format migration
 is intended in 4.2.0. Published-4.1 vault and Secret Service continuity passed
-in Fedora 44 x86_64 candidate tests; signed public-channel validation remains
-a release gate.
+in Fedora 44 x86_64 candidate tests, and the signed public-channel files are now
+deployed.
