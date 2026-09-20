@@ -54,6 +54,9 @@ Other channels: **Chocolatey** (`choco install tsafe`) and
 **Homebrew** (a `0ryant/tsafe` tap, in progress) are being brought up on the same
 model.
 
+Maintainers should run the [Chocolatey release checklist](chocolatey/RELEASE-CHECKLIST.md)
+before publishing a package.
+
 From a compiled archive: pick the release for the tag you want under
 **Releases**, download the archive for your platform, verify it against
 `SHA256SUMS.txt` from the same release, and put the binaries on your `PATH`.
