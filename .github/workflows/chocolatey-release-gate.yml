@@ -1,0 +1,30 @@
+name: Chocolatey release gate
+
+on:
+  pull_request:
+    paths:
+      - 'chocolatey/**'
+      - 'scripts/validate-chocolatey-package.ps1'
+      - '.github/workflows/chocolatey-release-gate.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'chocolatey/**'
+      - 'scripts/validate-chocolatey-package.ps1'
+      - '.github/workflows/chocolatey-release-gate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Chocolatey package
+    runs-on: windows-latest
+    steps:
+      - name: Check out release repository
+        uses: actions/checkout@v4
+
+      - name: Run Chocolatey release gate
+        shell: pwsh
+        run: ./scripts/validate-chocolatey-package.ps1
